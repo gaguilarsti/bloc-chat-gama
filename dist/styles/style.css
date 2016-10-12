@@ -1,0 +1,39 @@
+/* global */
+
+h1 {
+    color: #4A4949;
+    font-size: 3rem;
+}
+
+h2 {
+    color: #B1B2B3;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+p {
+    color: #B1B2B3;
+}
+
+
+/* chat room listing */
+.chat-rooms {
+    background-color: #DEDEDE;
+    padding: 0 20px 0 20px;
+    
+}
+
+.chat-room-list {
+    color: #B1B2B3;
+}
+
+.chat-room-number {
+    padding: 5px 0;
+}
+
+
+/* chat window */
+
+.active-chat-room {
+    margin: 20px 0 15px 5px;
+}

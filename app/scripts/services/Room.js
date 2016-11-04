@@ -3,13 +3,18 @@
         var ref = firebase.database().ref().child("rooms");
         var rooms = $firebaseArray(ref);
         //creating room objects with AngularFire
-        rooms.$add({ chatRoomName: "Chat Room Name" }).then(function(ref){
-            var id = ref.key;
-            console.log("added record with id " + id);
-            list.$indexFor(id); //returns location in the array
-        });
+        var create = function(roomName) {
+            console.log("create function called with " + roomName + "passed through.")
+            rooms.$add({ chatRoomName: roomName }).then(function(ref){
+                var id = ref.key;
+                console.log("added record with id " + id);
+                return rooms.$indexFor(id); //returns location in the array
+            });
+        }
+        
         return {
-            all: rooms
+            all: rooms,
+            create: create
         };
     }
     

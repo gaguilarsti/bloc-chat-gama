@@ -2,16 +2,27 @@
     <div class="row">
         <div class="col-md-3 chat-rooms">
             <h1>Bloc Chat</h1>
-            <ng-include src="'/templates/createchatroom.html'"></ng-include>
+            <div ng-controller="CreateCtrl as create">
+                {{ create.name }} <!-- why does this go away when I add create.name? -->
+                
+                <button type="button" class="btn btn-default" ng-click="createRoom = ! createRoom">Create Room</button>
+                
+                <form ng-class="{ 'hidden': !createRoom }" ng-submit="create.create()">
+                    <h3>Create new room</h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="createRoomInput" placeholder="Enter a room name here" ng-model="create.roomName">
+                    </div>
+                    <div class="form-footer">
+                        <button class="btn btn-primary" type="submit">Create Room</button>
+                        <button class="btn btn-warning" type="button" ng-click="">Cancel</button>
+                    </div>
+                </form>
+                
+            </div>
+            
                 <table class="chat-room-list">
                     <tr ng-repeat="room in home.rooms"> <!-- this is where I need to display the rooms in the template using ng-repeat -->
-                        <td class="chat-room-number">Room 1</td>
-                    </tr>
-                    <tr>
-                        <td class="chat-room-number">Room 2</td>
-                    </tr>
-                    <tr>
-                        <td class="chat-room-number">Room 3</td>
+                        <td class="chat-room-number">{{room.chatRoomName}}</td>
                     </tr>
                 </table>
         </div>

@@ -11,7 +11,12 @@
                 url: '/',
                 controller: 'HomeCtrl as home',
                 templateUrl: '/templates/home.html'
-        });  
+        })
+             .state('$ctrl', {
+                url: '/',
+                controller: 'ModalInstanceCtrl as $ctrl' , 
+                templateUrl: '/templates/myModalContent.html'
+        });
     }
     
     angular

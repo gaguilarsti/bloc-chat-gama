@@ -3,7 +3,7 @@
         <div class="col-md-3 chat-rooms">
             <h1>Bloc Chat</h1>
             <div ng-controller="CreateCtrl as create">
-                {{ create.name }} <!-- why does this go away when I add create.name? -->
+                <!-- {{ create.name }} why does this go away when I add create.name? -->
                 
                 <button type="button" class="btn btn-default" ng-click="createRoom = ! createRoom">Create Room</button>
                 
@@ -19,15 +19,24 @@
                 </form>
                 
             </div>
-            
-                <table class="chat-room-list">
-                    <tr ng-repeat="room in home.rooms"> <!-- this is where I need to display the rooms in the template using ng-repeat -->
-                        <td class="chat-room-number">{{room.chatRoomName}}</td>
-                    </tr>
-                </table>
+            <div>
+                <section class="chat-room-list">
+                    <div ng-repeat="room in home.rooms"> 
+                        <a ng-click="home.selectRoom(room);">{{room.chatRoomName}}</a>
+                        
+                    </div>
+                </section>
+            </div>
         </div>
-        <div class="col-md-6">
-            <div class="active-chat-room">Room 1</div>
+        <div class="col-md-9 active-chat-room">
+            <div class="active-chat-room-title">
+                <h3>{{ home.selectedRoom.chatRoomName }}</h3>
+            </div>
+            <div ng-repeat="message in home.messages" class="message-row-a">
+                <p class="username">{{message.username}}</p>
+                <p class="sent-at">{{message.sentAt}}</p>
+                <p class="message">{{message.content}}</p>
+            </div>
         </div>
     </div>
 </section>

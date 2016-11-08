@@ -10,7 +10,7 @@
                 console.log("added record with id " + id);
                 return rooms.$indexFor(id); //returns location in the array
             });
-        }
+        };
         
         return {
             all: rooms,

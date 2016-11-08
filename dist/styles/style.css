@@ -6,14 +6,30 @@ h1 {
 }
 
 h2 {
-    color: #B1B2B3;
-    font-size: 1.5rem;
+    color: #4A4949;
+    font-size: 2rem;
     padding: 5px;
 }
 
 p {
     color: #B1B2B3;
 }
+
+.username {
+    color: #4A4949;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.message {
+    color: #4A4949;
+}
+
+.sent-at {
+    margin-bottom: 0;
+}
+
+
 
 
 /* chat room listing */
@@ -35,5 +51,29 @@ p {
 /* chat window */
 
 .active-chat-room {
-    margin: 20px 0 15px 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.active-chat-room h3 {
+    color: #4A4949;
+    padding-left: 20px;
+    font-size: 2rem;
+}
+
+
+
+.active-chat-room-title {
+    margin: 0 0 20px 0;
+}
+
+.message-row-a {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #F6F7FB;
+}
+
+.message-row-b {
+    margin: 0;
+    padding: 10px 20px;
 }

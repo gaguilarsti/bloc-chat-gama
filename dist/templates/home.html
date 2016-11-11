@@ -37,6 +37,12 @@
                 <p class="sent-at">{{message.sentAt}}</p>
                 <p class="message">{{message.content}}</p>
             </div>
+            <form>
+                <div class="col-md-8 message-input">
+                    <input type="text" placeholder="Write your message here..." class="form-control" ng-model="home.newMessage">
+                </div>
+                <button class="col-md-1 btn btn-success" type="button" ng-click="home.sendMessage()">Send</button>
+            </form>
         </div>
     </div>
 </section>

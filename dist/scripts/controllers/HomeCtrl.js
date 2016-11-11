@@ -7,6 +7,11 @@
             $scope.selectedRoom = room;
             $scope.messages = Message.getByRoomId(this.selectedRoom.$id);
         };
+        
+        this.sendMessage = function () {
+            Message.send(this.newMessage, this.selectedRoom.$id);
+            this.newMessage = '';
+        }
     }
     
     

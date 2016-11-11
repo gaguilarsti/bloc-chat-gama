@@ -20,9 +20,9 @@
         while (!currentUser || currentUser === '') {
             currentUser = prompt("Set a username!  This name will appear when you send a message.  Sorry, not choice but to set a username:");  
             //console.log(currentUser);
-            $cookies.put('blocChatCurrentUser');
+            $cookies.put('blocChatCurrentUser', currentUser);
         }
-        console.log(currentUser);
+        console.log($cookies.get('blocChatCurrentUser'));
         return currentUser;
     }
     
